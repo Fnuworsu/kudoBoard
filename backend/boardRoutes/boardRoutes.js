@@ -26,6 +26,13 @@ router.post("/api/board/create", validateCreateBoard, async(req, res) => {
 // delete a board
 router.delete("/api/board/delete", validateBoarOrCardId, async(req, res) => {
     const { body : { id } } = req
+
+    await prisma.card.deleteMany({
+        where : {
+            boardId : id
+        }
+    })
+
     const deletedBoard = await prisma.board.delete({
         where : {
             id : id
@@ -40,9 +47,21 @@ router.get("/api/board/view", validateBoarOrCardId, async(req, res) => {
     const board = await prisma.board.findFirst({
         where : {
             id : id
+        },
+        include : {
+            card : true
         }
     })
     res.json(board.card)
+})
+
+router.get("/api/board/all", async (req, res) => {
+    const boards = await prisma.board.findMany({
+        include : {
+            card : true
+        }
+    })
+    res.json(boards)
 })
 
 module.exports = router

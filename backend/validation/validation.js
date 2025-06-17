@@ -18,8 +18,8 @@ const validateBoarOrCardId = (req, res, next) => {
 }
 
 const validateCreateCard = (req, res, next) => {
-    const { body : { title, description, author, boardId } } = req
-    if (!title || !description || !author || !boardId) {
+    const { body : { title, description, gifUrl, boardId } } = req
+    if (!title || !description || !gifUrl || !boardId) {
         res.status(400).json({
             msg : "title, description, author, boardId are required"
         })
@@ -28,8 +28,15 @@ const validateCreateCard = (req, res, next) => {
     }
 }
 
+const validateSearchQuery = (req, res, next) => {
+    const { body : { query } } = req
+    if (query) next()
+    else return res.status(400).json({msg: "query is required"})
+}
+
 module.exports = {
     validateCreateBoard,
     validateBoarOrCardId,
-    validateCreateCard
+    validateCreateCard,
+    validateSearchQuery
 }
