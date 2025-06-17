@@ -3,9 +3,11 @@ import "./BoardCard.css"
 export const BoardCard = (props) => {
     return (<>
         <div className="board">
-            <image src={props.image} className="board-image"/>
-            <span className="board-name">{props.title}</span>
-            <span className="board-category">{props.title}</span>
+            <img src={props.image} className="board-image"/>
+            <div className="board-content">
+                <h3 className="board-name">{props.title}</h3>
+                <h3 className="board-category">{props.category}</h3>
+            </div>
             <div className="board-actions">
                 <ul>
                     <li><button className="view-board">View Board</button></li>
