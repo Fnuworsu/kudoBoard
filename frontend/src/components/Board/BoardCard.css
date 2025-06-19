@@ -1,0 +1,124 @@
+.board {
+    width: 100%;
+    max-width: 300px;
+    height: fit-content;
+    transition: all 0.3s ease;
+    background-color: #FFFFFF;
+    border-radius: 13px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.board:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.board-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-bottom: 2px solid #FFB74D;
+}
+
+.board-content {
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #FFFFFF;
+}
+
+.board-name {
+    color: #FF8C00;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.board-category {
+    color: #343a40;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.board-actions {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E0E0E0;
+    margin-top: auto;
+}
+
+.board-actions ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.board-actions li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.view-board, .delete-board {
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.view-board {
+    color: #FF8C00;
+    background-color: #FFFFFF;
+    border: 1px solid #FF8C00;
+}
+
+.view-board:hover {
+    background-color: #FFB74D;
+    color: white;
+    border-color: #FF8C00;
+}
+
+.delete-board {
+    color: white;
+    background-color: #FF8C00;
+    border: none;
+}
+
+.delete-board:hover {
+    background-color: #E67E00;
+}
+
+@media (max-width: 650px) {
+    .board {
+        max-width: 100%;
+    }
+
+    .board-actions ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .view-board, .delete-board {
+        width: 100%;
+        text-align: center;
+    }
+}
