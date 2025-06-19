@@ -8,7 +8,7 @@ const router = new Router()
 
 // group by category
 router.get("/api/board/group", async(req, res) => {
-    const { body : { category } } = req
+    const category = req.query.category
     const boards = await prisma.board.findMany({
         where: {
             category: category
@@ -23,14 +23,15 @@ router.get("/api/board/group", async(req, res) => {
 // group recent
 router.get("/api/board/recent", async(req, res) => {
     const boards = await prisma.board.findMany({
-        where: {
-            createdAt: {
-                lte: new Date().toISOString()
-            }
+        orderBy: {
+            createdAt: 'desc'
         },
+        take: 6,
         include : {
             card : true
         }
     })
     res.json(boards)
 })
+
+module.exports = router

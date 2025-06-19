@@ -1,6 +1,87 @@
+.content {
+    background-color: #F9F9F9;
+}
+
+.board-list-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #FF8C00;
+}
+
+.create-board-btn {
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.create-board-btn:hover {
+    background-color: #E67E00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 .board-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+    padding: 30px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+}
+
+.board-list > div {
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 90px;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .board-list {
+        max-width: 900px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .board-list {
+        max-width: 600px;
+        grid-gap: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .board-list {
+        max-width: 100%;
+        padding: 15px;
+        grid-gap: 15px;
+    }
+
+    .board-list > div {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+.no-boards-message {
+    text-align: center;
+    width: 100%;
+    color: #343a40;
+    font-style: italic;
+    padding: 60px 20px;
+    font-size: 1.2em;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
