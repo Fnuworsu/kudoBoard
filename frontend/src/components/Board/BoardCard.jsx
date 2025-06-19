@@ -1,4 +1,5 @@
-import "./BoardCard.css"
+import { Link } from "react-router-dom";
+import "./BoardCard.css";
 
 export const BoardCard = (props) => {
     const handleDelete = () => {
@@ -16,7 +17,11 @@ export const BoardCard = (props) => {
             </div>
             <div className="board-actions">
                 <ul>
-                    <li><button className="view-board">View Board</button></li>
+                    <li>
+                        <Link to={`/board/${props.id}`} className="view-board-link">
+                            <button className="view-board">View Board</button>
+                        </Link>
+                    </li>
                     <li><button className="delete-board" onClick={handleDelete}>Delete Board</button></li>
                 </ul>
             </div>
