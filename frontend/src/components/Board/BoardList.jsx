@@ -104,26 +104,35 @@ export const BoardList = () => {
 
     useEffect(() => {
         loadBoardsByCategory(currentCategory)
+    }, [])
 
+    useEffect(() => {
+        if (currentCategory) {
+            loadBoardsByCategory(currentCategory)
+        }
+    }, [currentCategory])
+
+    useEffect(() => {
+        const filteredBoards = applyFilters(allBoards, searchQuery)
+        setDisplayedBoards(filteredBoards)
+    }, [searchQuery, allBoards])
+
+    useEffect(() => {
         const handleBoardCreated = () => {
             loadBoardsByCategory(currentCategory)
-        };
+        }
 
         const handleCategoryChanged = (event) => {
             const newCategory = event.detail.category
             setCurrentCategory(newCategory)
             setSearchQuery('')
-            loadBoardsByCategory(newCategory)
-        };
+        }
 
         const handleSearchQueryChanged = (event) => {
             const newQuery = event.detail.searchQuery
             setSearchQuery(newQuery)
 
-
-            const filteredBoards = applyFilters(allBoards, newQuery)
-            setDisplayedBoards(filteredBoards)
-        };
+        }
 
         window.addEventListener('boardCreated', handleBoardCreated)
         window.addEventListener('categoryChanged', handleCategoryChanged)
@@ -133,8 +142,8 @@ export const BoardList = () => {
             window.removeEventListener('boardCreated', handleBoardCreated)
             window.removeEventListener('categoryChanged', handleCategoryChanged)
             window.removeEventListener('searchQueryChanged', handleSearchQueryChanged)
-        };
-    }, [currentCategory, allBoards, searchQuery])
+        }
+    }, [currentCategory])
 
     return (
         <>
