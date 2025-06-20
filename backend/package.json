@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server.js",
-    "db:start": "npx prisma migrate dev --name init --db_migration"
+    "start": "node ./server.js"
   },
   "type": "commonjs",
   "author": "Felix Nuworsu",
