@@ -49,7 +49,7 @@ export const HomePage = () => {
 
     const handleSaveBoard = async (newBoardData) => {
         try {
-            const response = await fetch("http://localhost:3000/api/board/create", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -14,7 +14,7 @@ export const BoardPage = () => {
         const fetchBoardDetails = async () => {
             try {
                 setLoading(true)
-                const response = await fetch(`http://localhost:3000/api/board/all`, {
+                const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/all`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"

@@ -11,7 +11,7 @@ export const CardGrid = ({ boardId }) => {
     const fetchCards = async () => {
         try {
             setLoading(true)
-            const response = await fetch("http://localhost:3000/api/board/view", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/view`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -34,7 +34,7 @@ export const CardGrid = ({ boardId }) => {
 
     const handleDeleteCard = async (cardId) => {
         try {
-            const response = await fetch("http://localhost:3000/api/board/card/delete", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/card/delete`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"

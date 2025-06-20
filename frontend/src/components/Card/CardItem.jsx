@@ -15,7 +15,7 @@ export const CardItem = (props) => {
 
     const fetchComments = async () => {
         try {
-            const response = await fetch("http://localhost:3000/api/card/comments", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/card/comments`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -42,7 +42,7 @@ export const CardItem = (props) => {
 
     const handleUpvote = async () => {
         try {
-            const response = await fetch("http://localhost:3000/api/board/card/upvote", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/card/upvote`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"
@@ -57,7 +57,7 @@ export const CardItem = (props) => {
                 throw new Error("Failed to upvote card")
             }
         } catch (error) {
-            console.error("Error upvoting card:", error)
+            throw new Error(error)
         }
     }
 
@@ -66,7 +66,7 @@ export const CardItem = (props) => {
         if (!newComment.trim()) return
 
         try {
-            const response = await fetch("http://localhost:3000/api/card/comment/create", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/card/comment/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -85,13 +85,13 @@ export const CardItem = (props) => {
                 throw new Error("Failed to add comment")
             }
         } catch (error) {
-            console.error("Error adding comment:", error)
+            throw new Error(error)
         }
     }
 
     const handleDeleteComment = async (commentId) => {
         try {
-            const response = await fetch("http://localhost:3000/api/card/comment/delete", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/card/comment/delete`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
@@ -105,7 +105,7 @@ export const CardItem = (props) => {
                 throw new Error("Failed to delete comment")
             }
         } catch (error) {
-            console.error("Error deleting comment:", error)
+            throw new Error(error)
         }
     }
 

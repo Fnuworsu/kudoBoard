@@ -51,7 +51,7 @@ export const CardModal = ({ boardId, onClose, onSave }) => {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/api/board/card/create", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/card/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

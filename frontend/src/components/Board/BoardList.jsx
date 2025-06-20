@@ -9,7 +9,7 @@ export const BoardList = () => {
     const [searchQuery, setSearchQuery] = useState('')
 
     const fetchAllBoards = async () => {
-        const response = await fetch("http://localhost:3000/api/board/all", {
+        const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/all`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -20,7 +20,7 @@ export const BoardList = () => {
     }
 
     const fetchRecentBoards = async () => {
-        const response = await fetch("http://localhost:3000/api/board/recent", {
+        const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/recent`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -31,7 +31,7 @@ export const BoardList = () => {
     }
 
     const fetchBoardsByCategory = async (category) => {
-        const response = await fetch(`http://localhost:3000/api/board/group?category=${encodeURIComponent(category)}`, {
+        const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/group?category=${encodeURIComponent(category)}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -80,7 +80,7 @@ export const BoardList = () => {
 
     const deleteBoard = async (boardId) => {
         try {
-            const response = await fetch("http://localhost:3000/api/board/delete", {
+            const response = await fetch(`https://kudoboard-5ioh.onrender.com/api/board/delete`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
