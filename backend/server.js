@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 const boardRoutes = require("./boardRoutes/boardRoutes.js")
 const cardRoutes = require("./cardRoutes/cardRoutes.js")
 const filterRoutes = require("./filterRoutes/filterRoutes.js")
+const commentRoutes = require("./commentRoutes/commentRoutes.js")
 
 
 dotenv.config()
@@ -25,6 +26,7 @@ app.get("/api/", (req, res) => {
 app.use(boardRoutes)
 app.use(cardRoutes)
 app.use(filterRoutes)
+app.use(commentRoutes)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)

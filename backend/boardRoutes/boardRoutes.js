@@ -42,7 +42,7 @@ router.delete("/api/board/delete", validateBoarOrCardId, async(req, res) => {
 })
 
 // view a board(all cards in the board)
-router.get("/api/board/view", validateBoarOrCardId, async(req, res) => {
+router.post("/api/board/view", validateBoarOrCardId, async(req, res) => {
     const { body : { id } } = req
     const board = await prisma.board.findFirst({
         where : {
