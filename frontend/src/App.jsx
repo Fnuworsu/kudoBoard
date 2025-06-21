@@ -4,6 +4,7 @@ import { BoardList } from './components/Board/BoardList.jsx'
 import { BoardPage } from './components/Board/BoardPage.jsx'
 import { HomePage } from './components/Header/HomePage.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
+import { Footer } from './components/Footer/Footer.jsx'
 
 function App() {
   const location = useLocation()
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<BoardList />} />
           <Route path="/board/:boardId" element={<BoardPage />} />
         </Routes>
+        <Footer />
       </div>
     </ThemeProvider>
   )

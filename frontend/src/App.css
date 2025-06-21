@@ -6,6 +6,13 @@
     position: relative;
     transition: background-color 0.3s ease;
 }
+.App > *:not(footer) {
+    flex: 0 0 auto;
+}
+
+.App > footer {
+    margin-top: auto;
+}
 
 .back-button {
     background-color: var(--card-background);
