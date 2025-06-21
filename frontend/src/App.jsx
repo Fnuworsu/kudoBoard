@@ -3,6 +3,7 @@ import './App.css'
 import { BoardList } from './components/Board/BoardList.jsx'
 import { BoardPage } from './components/Board/BoardPage.jsx'
 import { HomePage } from './components/Header/HomePage.jsx'
+import { ThemeProvider } from './context/ThemeContext.jsx'
 
 function App() {
   const location = useLocation()
@@ -15,18 +16,20 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      {isHomePage && <HomePage />}
-      {isBoardPage && (
-        <button onClick={handleBackClick} className="back-button">
-          &larr; Back to Boards
-        </button>
-      )}
-      <Routes>
-        <Route path="/" element={<BoardList />} />
-        <Route path="/board/:boardId" element={<BoardPage />} />
-      </Routes>
-    </div>
+    <ThemeProvider>
+      <div className='App'>
+        {isHomePage && <HomePage />}
+        {isBoardPage && (
+          <button onClick={handleBackClick} className="back-button">
+            &larr; Back to Boards
+          </button>
+        )}
+        <Routes>
+          <Route path="/" element={<BoardList />} />
+          <Route path="/board/:boardId" element={<BoardPage />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   )
 }
 

@@ -2,10 +2,10 @@
     width: 100%;
     max-width: 300px;
     height: fit-content;
-    transition: all 0.3s ease;
-    background-color: #FFFFFF;
+    transition: all 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-background);
     border-radius: 13px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--shadow-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
 .board:hover {
     cursor: pointer;
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px var(--shadow-color);
 }
 
 .board-image {
@@ -22,42 +22,46 @@
     height: auto;
     aspect-ratio: 3/4;
     object-fit: cover;
-    border-bottom: 2px solid #FFB74D;
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .board-content {
     text-align: center;
     padding: 15px 10px;
-    background-color: #FFFFFF;
+    background-color: var(--card-background);
+    transition: background-color 0.3s ease;
 }
 
 .board-name {
-    color: #FF8C00;
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0 0 5px 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
 .board-category {
-    color: #343a40;
+    color: var(--text-color);
     font-size: 0.9rem;
     margin: 5px 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     opacity: 0.8;
+    transition: color 0.3s ease;
 }
 
 .board-actions {
     display: flex;
     justify-content: center;
     padding: 10px;
-    background-color: #FFFFFF;
-    border-top: 1px solid #E0E0E0;
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
     margin-top: auto;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .board-actions ul {
@@ -80,31 +84,31 @@
     padding: 8px 15px;
     border-radius: 8px;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     white-space: nowrap;
     font-weight: 500;
 }
 
 .view-board {
-    color: #FF8C00;
-    background-color: #FFFFFF;
-    border: 1px solid #FF8C00;
+    color: var(--primary-color);
+    background-color: var(--card-background);
+    border: 1px solid var(--primary-color);
 }
 
 .view-board:hover {
-    background-color: #FFB74D;
-    color: white;
-    border-color: #FF8C00;
+    background-color: var(--secondary-color);
+    color: var(--button-text);
+    border-color: var(--primary-color);
 }
 
 .delete-board {
-    color: white;
-    background-color: #FF8C00;
+    color: var(--button-text);
+    background-color: var(--primary-color);
     border: none;
 }
 
 .delete-board:hover {
-    background-color: #E67E00;
+    background-color: var(--primary-hover);
 }
 
 @media (max-width: 650px) {

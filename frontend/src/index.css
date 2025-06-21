@@ -1,3 +1,31 @@
+:root {
+    --background-color: #F9F9F9;
+    --text-color: #343a40;
+    --card-background: #FFFFFF;
+    --border-color: #E0E0E0;
+    --primary-color: #FF8C00;
+    --primary-hover: #E67E00;
+    --secondary-color: #FFB74D;
+    --button-text: white;
+    --input-background: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --header-border: #FFB74D;
+}
+
+.dark-theme {
+    --background-color: #121212;
+    --text-color: #E0E0E0;
+    --card-background: #1E1E1E;
+    --border-color: #333333;
+    --primary-color: #FF8C00;
+    --primary-hover: #FFB74D;
+    --secondary-color: #E67E00;
+    --button-text: #121212;
+    --input-background: #2D2D2D;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --header-border: #FF8C00;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +36,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #F9F9F9;
-    color: #343a40;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }

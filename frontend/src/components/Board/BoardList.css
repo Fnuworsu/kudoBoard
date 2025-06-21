@@ -1,29 +1,31 @@
 .content {
-    background-color: #F9F9F9;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
 }
 
 .board-list-header h2 {
     margin: 0;
     font-size: 24px;
-    color: #FF8C00;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 .create-board-btn {
-    background-color: #FF8C00;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--button-text);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease;
     font-weight: 600;
 }
 
 .create-board-btn:hover {
-    background-color: #E67E00;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .board-list {
@@ -35,8 +37,9 @@
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
-    background-color: #F9F9F9;
+    background-color: var(--background-color);
     border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .board-list > div {
@@ -96,13 +99,14 @@
 .no-boards-message {
     text-align: center;
     width: 100%;
-    color: #343a40;
+    color: var(--text-color);
     font-style: italic;
     padding: 60px 20px;
     font-size: 1.2em;
-    background-color: #FFFFFF;
+    background-color: var(--card-background);
     border-radius: 10px;
     margin-top: 20px;
-    border: 1px solid #E0E0E0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './HomePage.css'
 import { Modal } from '../Board/Modal'
+import { ThemeContext } from '../../context/ThemeContext'
 
 export const HomePage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedCategory, setSelectedCategory] = useState('All')
     const [searchQuery, setSearchQuery] = useState('')
+    const { isDarkMode, toggleTheme } = useContext(ThemeContext)
 
     const handleCreateBoardClick = () => {
         setIsModalOpen(true)
@@ -80,6 +82,21 @@ export const HomePage = () => {
             <div className='container'>
                 <div className='header'>
                     <h1 className='logo'> Kudos Board </h1>
+                    <button
+                        className='theme-toggle'
+                        onClick={toggleTheme}
+                        aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                    >
+                        {isDarkMode ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                            </svg>
+                        )}
+                    </button>
                 </div>
                 <main>
                     <div className='actions'>
